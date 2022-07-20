@@ -10,10 +10,10 @@ Gosto muito de viajar e é sempre bom receber dicas de viagem antes de ir a um l
 A estrutura dos dados que serão inseridos seguem o seguinte formado exemplo:
 
 ```
-"dicasID": "codigo gerado automaticamente",
+"_id": "codigo gerado automaticamente",
 "cidade": "Campina Grande",
 "estado": "Paraíba",
-"estacãoAno": "Inverno",
+"temporada": "Inverno",
 "dicas": "Trazer casacos"
 ```
 <br>
