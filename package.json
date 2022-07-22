@@ -1,0 +1,26 @@
+{
+  "name": "mochidicas-reprograma-projetofinal",
+  "version": "1.0.0",
+  "description": "------------------\r <br>",
+  "main": "swagger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "swagger-autogen": "node swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisAnDias/Mochidicas-Reprograma-ProjetoFinal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisAnDias/Mochidicas-Reprograma-ProjetoFinal/issues"
+  },
+  "homepage": "https://github.com/ChrisAnDias/Mochidicas-Reprograma-ProjetoFinal#readme",
+  "dependencies": {
+    "swagger-autogen": "^2.21.5",
+    "swagger-ui-express": "^4.5.0"
+  }
+}
