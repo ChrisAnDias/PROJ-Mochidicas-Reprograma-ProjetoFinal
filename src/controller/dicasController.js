@@ -26,13 +26,23 @@ const regCriaDicas = async (req, res) => {
 
     res.status(201).send({
       message: "Dica cadastrada com sucesso!",
-      dica: newCandidata,
+      dica: novaDica,
     });
   } catch (err) {
     res.status(424).send({ message: err.message })
   }
 };
 
+const allDicas = async (req, res) => {
+  dicasModel.find((err, dica) => {
+    if (err) {
+      return res.status(424).send({ message: err.message });
+    }
+    res.status(200).send(dicasModel);
+  });
+};
+
 module.exports = {
-  regCriaDicas
+  regCriaDicas, 
+  allDicas
 }

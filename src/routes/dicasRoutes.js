@@ -1,12 +1,12 @@
 //Importações
-//const controller = require('..')
 const express = require('express')
-
 const router = express.Router()
+const controller = require('../controller/dicasController')
+
 
 //Rotas
-// router.post("/dicas", controller.criaDicas)
-// router.get("/listaDicas", controller.allDicas)
+router.get("/listaDicas", controller.allDicas)
+// router.post("/dicas", controller.regCriaDicas)
 // router.get("/listaDicas/cidade", controller.dicasByCidade)
 // router.get("/listaDicas/estado", controller.dicasByEstado)
 // router.patch("/attdica/:id", controller.updateDicas)
