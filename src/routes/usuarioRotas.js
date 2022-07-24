@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const controller = require('../controller/usuarioController')
 
-router.post('/usuarios/', controller.create)
+router.post('/usuarios/criar', controller.create)
 router.get('/usuarios/', controller.getAll)
 router.delete('/usuarios/:id', controller.deleteById)
 router.post('/usuarios/login', controller.login)

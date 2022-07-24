@@ -10,6 +10,6 @@ const usuarioSchema = new mongoose.Schema({
     }
 )
 
-const usuario = mongoose.model('colaboradoras', usuarioSchema)
+const usuario = mongoose.model('usuario', usuarioSchema)
 
 module.exports = usuario
