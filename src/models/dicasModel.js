@@ -25,8 +25,13 @@ const dicasSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-//{timestamps: true}
-})
+
+    perfil: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'perfil'
+    }
+}, {timestamps: true})
 
 const Model = mongoose.model('dicas', dicasSchema)
 //Exportações
