@@ -74,15 +74,12 @@ const dicasByCidade = async (req, res) => {
       if (erro) {
         return res.status(403).send('Senha não autorizada')
       }
-
-      let cidadeReq = req.query.cidade
-      let cidadeFilt = DicasModel.filter((dica) =>
-        dica.cidade.includes(cidadeReq),
-      )
-      if (cidadeFilt.length > 0) {
-        res.status(200).send(cidadeFilt)
-      } else {
-        res.status(404).send({ message: 'Cidade não encontrado' })
+      try {
+        const { cidade: cidade } = req.query;
+        const findCidade = await DicasModel.find({ cidade: cidade });
+        res.status(200).json(findCidade);
+      } catch (err) {
+        res.status(500).send({ message: err.message });
       }
     })
   } catch (err) {
@@ -90,8 +87,95 @@ const dicasByCidade = async (req, res) => {
   }
 }
 
+const dicasByEstado = async (req, res) => {
+  try {
+    const authHeader = req.get('authorization')
+    if (!authHeader) {
+      return res.status(401).send('Sem autorização!')
+    }
+    const token = authHeader.split(' ')[1]
+    await jwt.verify(token, SECRET, async function (erro) {
+      if (erro) {
+        return res.status(403).send('Senha não autorizada')
+      }
+      try {
+        const { estado: estado } = req.query;
+        const findEstado = await DicasModel.find({ estado: estado });
+        res.status(200).json(findEstado);
+      } catch (err) {
+        res.status(500).send({ message: err.message });
+      }
+    })
+  } catch (err) {
+    response.status(500).send({ message: 'Erro no server' })
+  }
+}
+
+const updateDicas = async (req, res) => {
+  try {
+    const authHeader = req.get('authorization')
+    if (!authHeader) {
+      return res.status(401).send('Sem autorização!')
+    }
+    const token = authHeader.split(' ')[1]
+    await jwt.verify(token, SECRET, async function (erro) {
+      if (erro) {
+        return res.status(403).send('Senha não autorizada')
+      }
+      try {
+        const { perfilID, cidade, estado, temporada, dica } = req.body
+        const updatedDica = await DicasModel.findByIdAndUpdate(req.params.id,
+          {
+            perfilID, cidade, estado, temporada, dica
+          });
+        res.status(200).json(updatedDica);
+      } catch (err) {
+        res.status(500).send({ message: err.message });
+      }
+    })
+  } catch (err) {
+    response.status(500).send({ message: 'Erro no server' })
+  }
+}
+
+const deleteDica = async (req, res) => {
+  try {
+    const authHeader = req.get('authorization')
+
+    if (!authHeader) {
+      return res.status(401).send('Sem autorização')
+    }
+
+    const token = authHeader.split(' ')[1]
+
+    await jwt.verify(token, SECRET, async function (err) {
+
+      if (err) {
+        return res.status(403).send('Senha não autorizada')
+      }
+    })
+    const { id } = req.params;
+    const findByIdAndDelete = await DicasModel.findByIdAndDelete(id)
+
+    if (findByIdAndDelete == null) {
+      return res.status(404).json({ message: `Dica de ID ${id} não foi encontrada. ` });
+    }
+
+    await findByIdAndDelete.remove()
+
+    res.status(200).json({ message: `Dica de ID ${id} foi deletada.` })
+
+  } catch (err) {
+    res.status(500).send({ message: err.message })
+  }
+}
+
+
 module.exports = {
   createDica,
   allDicas,
-  dicasByCidade
+  dicasByCidade,
+  dicasByEstado,
+  updateDicas,
+  deleteDica
 }

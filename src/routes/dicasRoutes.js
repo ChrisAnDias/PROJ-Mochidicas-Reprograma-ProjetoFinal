@@ -8,8 +8,8 @@ const controller = require('../controller/dicasController')
 router.get("/listarDicas", controller.allDicas)
 router.post("/dica", controller.createDica)
 router.get("/dicas/cidade", controller.dicasByCidade)
-// router.get("/listaDicas/estado", controller.dicasByEstado)
-// router.patch("/attdica/:id", controller.updateDicas)
-// router.delete("/deleteDica/:id", controller.deleteCoach)
+router.get("/dicas/estado", controller.dicasByEstado)
+router.patch("/attdica/:id", controller.updateDicas)
+router.delete("/deleteDica/:id", controller.deleteDica)
 
 module.exports = router
