@@ -1,3 +1,5 @@
 const app = require('./src/app')
 const PORT = process.env.PORT
-app.listen(8080, () => console.log(`Porta funcionando 200 OK`))
+app.listen(PORT, () => {
+    console.log(`Servidor conectado na porta ${PORT}`)
+})
