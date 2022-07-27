@@ -16,9 +16,9 @@ app.use('/documents', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 // banco de dados
 mongoose.connect()
 //app.uses
-app.use("/", dicasRoutes)
-app.use("/", usuarioRoutes)
-app.use("/", perfilRoutes)
+app.use( dicasRoutes)
+app.use(usuarioRoutes)
+app.use(perfilRoutes)
 //exportação
 module.exports = app    
 
