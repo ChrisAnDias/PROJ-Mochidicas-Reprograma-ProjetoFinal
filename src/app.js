@@ -9,6 +9,7 @@ const perfilRoutes = require("./routes/perfilRoutes")
 const app = express()
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('../swagger/swagger_output.json');
+const index = require('./routes/index')
 //app.uses
 app.use(express.json())
 app.use(cors())
@@ -19,6 +20,7 @@ mongoose.connect()
 app.use( dicasRoutes)
 app.use(usuarioRoutes)
 app.use(perfilRoutes)
+app.use('/', index)
 //exportação
 module.exports = app    
 
