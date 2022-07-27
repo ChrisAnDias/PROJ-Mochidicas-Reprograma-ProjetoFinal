@@ -111,6 +111,31 @@ const dicasByEstado = async (req, res) => {
   }
 }
 
+const dicasByTemporada = async (req, res) => {
+  try {
+    const authHeader = req.get('authorization')
+    if (!authHeader) {
+      return res.status(401).send('Sem autorização!')
+    }
+    const token = authHeader.split(' ')[1]
+    await jwt.verify(token, SECRET, async function (erro) {
+      if (erro) {
+        return res.status(403).send('Senha não autorizada')
+      }
+      try {
+        const { temporada: temporada } = req.query;
+        const findTemp = await DicasModel.find({ temporada: temporada });
+        res.status(200).json(findTemp);
+      } catch (err) {
+        res.status(500).send({ message: err.message });
+      }
+    })
+  } catch (err) {
+    response.status(500).send({ message: 'Erro no server' })
+  }
+}
+
+
 const updateDicas = async (req, res) => {
   try {
     const authHeader = req.get('authorization')
@@ -176,6 +201,7 @@ module.exports = {
   allDicas,
   dicasByCidade,
   dicasByEstado,
+  dicasByTemporada,
   updateDicas,
   deleteDica
 }
