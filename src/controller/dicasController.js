@@ -149,10 +149,11 @@ const updateDicas = async (req, res) => {
       }
       try {
         const { perfilID, cidade, estado, temporada, dica } = req.body
-        const updatedDica = await DicasModel.findByIdAndUpdate(req.params.id,
+        await DicasModel.findByIdAndUpdate(req.params.id,
           {
             perfilID, cidade, estado, temporada, dica
-          });
+          })
+        const updatedDica = await DicasModel.findById(req.params.id)         
         res.status(200).json(updatedDica);
       } catch (err) {
         res.status(500).send({ message: err.message });

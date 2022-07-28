@@ -13,9 +13,9 @@ const createPerfil = async (req, res) => {
       if (erro) {
         return res.status(403).send('Senha não autorizada')
       }
-      const { nome, país, estado , cidade, idade, genero } = req.body
+      const { nome, país, estado, cidade, idade, genero } = req.body
       const newPerfil = new PerfilModel({
-        nome, país, estado , cidade, idade, genero
+        nome, país, estado, cidade, idade, genero
       })
       const savedPerfil = await newPerfil.save()
       res.status(201).json(savedPerfil)
@@ -78,12 +78,13 @@ const updatePerfil = async (req, res) => { //ajustar essa rota. ta precisando d�
       if (erro) {
         return res.status(403).send('Senha não autorizada')
       }
-      const { nome, idade, estado , cidade, país, genero } = req.body
-      const perfilAtualizado = await PerfilModel.findByIdAndUpdate(req.params.id, 
+      const { nome, idade, estado, cidade, país, genero } = req.body
+      await PerfilModel.findByIdAndUpdate(req.params.id,
         {
-          nome, idade, estado , cidade, país, genero
+          nome, idade, estado, cidade, país, genero
         })
-      res.status(200).json(perfilAtualizado)
+      const updatedPerfil = await PerfilModel.findById(req.params.id)
+      res.status(200).json(updatedPerfil)
     })
   } catch (error) {
     console.error(error)
@@ -104,5 +105,5 @@ const deletePerfil = async (req, res) => {
 }
 
 module.exports = {
-    createPerfil, findAllPerfis, updatePerfil, deletePerfil, findPerfilById
+  createPerfil, findAllPerfis, updatePerfil, deletePerfil, findPerfilById
 }
