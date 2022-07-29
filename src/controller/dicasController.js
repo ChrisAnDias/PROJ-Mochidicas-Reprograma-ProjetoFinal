@@ -46,8 +46,8 @@ const createDica = async (req, res) => {
 
 const allDicas = async (req, res) => {
   try {
-      const dicasAll = await DicasModel.find()
-      res.status(200).json(dicasAll)
+    const dicasAll = await DicasModel.find()
+    res.status(200).json(dicasAll)
   } catch (error) {
     res.status(500).json({ message: error.message })
   }
@@ -55,73 +55,32 @@ const allDicas = async (req, res) => {
 
 const dicasByCidade = async (req, res) => {
   try {
-    const authHeader = req.get('authorization')
-    if (!authHeader) {
-      return res.status(401).send('Sem autorização!')
-    }
-    const token = authHeader.split(' ')[1]
-    await jwt.verify(token, SECRET, async function (erro) {
-      if (erro) {
-        return res.status(403).send('Senha não autorizada')
-      }
-      try {
-        const { cidade: cidade } = req.query;
-        const findCidade = await DicasModel.find({ cidade: cidade });
-        res.status(200).json(findCidade);
-      } catch (err) {
-        res.status(500).send({ message: err.message });
-      }
-    })
+    const { cidade: cidade } = req.query;
+    const findCidade = await DicasModel.find({ cidade: cidade });
+    res.status(200).json(findCidade);
   } catch (err) {
-    response.status(500).send({ message: 'Erro no server' })
+    res.status(500).send({ message: err.message });
   }
 }
 
 const dicasByEstado = async (req, res) => {
   try {
-    const authHeader = req.get('authorization')
-    if (!authHeader) {
-      return res.status(401).send('Sem autorização!')
-    }
-    const token = authHeader.split(' ')[1]
-    await jwt.verify(token, SECRET, async function (erro) {
-      if (erro) {
-        return res.status(403).send('Senha não autorizada')
-      }
-      try {
-        const { estado: estado } = req.query;
-        const findEstado = await DicasModel.find({ estado: estado });
-        res.status(200).json(findEstado);
-      } catch (err) {
-        res.status(500).send({ message: err.message });
-      }
-    })
+    const { estado: estado } = req.query;
+    const findEstado = await DicasModel.find({ estado: estado });
+    res.status(200).json(findEstado);
   } catch (err) {
-    response.status(500).send({ message: 'Erro no server' })
+    res.status(500).send({ message: err.message });
   }
+
 }
 
 const dicasByTemporada = async (req, res) => {
   try {
-    const authHeader = req.get('authorization')
-    if (!authHeader) {
-      return res.status(401).send('Sem autorização!')
-    }
-    const token = authHeader.split(' ')[1]
-    await jwt.verify(token, SECRET, async function (erro) {
-      if (erro) {
-        return res.status(403).send('Senha não autorizada')
-      }
-      try {
-        const { temporada: temporada } = req.query;
-        const findTemp = await DicasModel.find({ temporada: temporada });
-        res.status(200).json(findTemp);
-      } catch (err) {
-        res.status(500).send({ message: err.message });
-      }
-    })
+    const { temporada: temporada } = req.query;
+    const findTemp = await DicasModel.find({ temporada: temporada });
+    res.status(200).json(findTemp);
   } catch (err) {
-    response.status(500).send({ message: 'Erro no server' })
+    res.status(500).send({ message: err.message });
   }
 }
 
@@ -143,7 +102,7 @@ const updateDicas = async (req, res) => {
           {
             perfilID, cidade, estado, temporada, dica
           })
-        const updatedDica = await DicasModel.findById(req.params.id)         
+        const updatedDica = await DicasModel.findById(req.params.id)
         res.status(200).json(updatedDica);
       } catch (err) {
         res.status(500).send({ message: err.message });
