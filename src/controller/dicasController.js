@@ -46,18 +46,8 @@ const createDica = async (req, res) => {
 
 const allDicas = async (req, res) => {
   try {
-    const authHeader = req.get('authorization')
-    if (!authHeader) {
-      return res.status(401).send('Sem autorização!')
-    }
-    const token = authHeader.split(' ')[1]
-    await jwt.verify(token, SECRET, async function (erro) {
-      if (erro) {
-        return res.status(403).send('Senha não autorizada')
-      }
       const dicasAll = await DicasModel.find()
       res.status(200).json(dicasAll)
-    })
   } catch (error) {
     res.status(500).json({ message: error.message })
   }
