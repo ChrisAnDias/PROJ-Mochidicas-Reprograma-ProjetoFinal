@@ -1,13 +1,32 @@
-# {MOCHIDICAS} - Projeto Final Reprograma
-------------------
-<br>
+<h1 align="center">
+    <br>
+    <p align="center"> Mochidicas - Projeto Final {Reprograma} <p>
+</h1></br>
 
-## Introdução
-Gosto muito de viajar e é sempre bom receber dicas de viagem antes de ir a um local, ou mesmo no local em que se está viajando. Dicas culinárias, de transporte, hospedagem. Todas essas são bem vindas. Dada essa necessidade, e a perene vontade de deslocamento dos seres humanos, existir um lugar (um blog, uma página na web) em que se possa registrar e ler as dicas seja por categorias como localização da cidade, se é uma viagem urbana ou rural, histórica ou moderna, entre outras, é bem interessante. <br>
-Antigamente tive a ideia de em algum momento na minha vida fazer um blog com dicas e fotos dos lugares que visitei e histórias engraçadas que vivi (típico de viajantes). Mas o rumo que a vida me levou acabou tomando meu tempo de modo que não pus a ideia em prática. Com a oportunidade do projeto final de por em prática os conhecimentos adquiridos nestas últimas 18 semanas, com algo que eu goste, tirei essa ideia do baú de minha memória, e quis tentar aplicar os conhecimentos aprendidos durante o curso usando essa temática. 
-## Objetivo
+<p align="center">
+<img src="grafics/mochidicas.gif" alt="logo mochidicas" width="500">
+</p> <p align="center"> </p>
+</h1></br>
 
-A ideia é uma API que contribua para uma página de viagens, ou um blog, ou o que quer que seja que se utilize da API de forma útil. Tenho conciência que esta API pode ser aperfeiçoada e estou aberta a sugestões e continuarei meu processo de estudos para melhorá-la. 
+
+</br>
+
+<!--ts-->
+- [🌻 {Mochidicas}](#-Casa-Preta-Doulas)
+- [📁 Arquitetura MRC](#-Arquitetura-MRC)
+- [💻 Tecnologias E Pacotes Usados](#-Tecnologias-E-Pacotes-Usados)
+- [🪄 Instalação](#-Instalação)
+- [🔐 Rotas/Endpoints](#-Rotas-/-Endpoints)
+- [🎄 Autora](#-Autora)
+
+
+<!--te-->
+
+</br>
+
+## {Mochidicas}
+
+A ideia é uma API contendo CRUD completo, banco de dados, autenticação e login, que põe em prática os conhecimentos adquiridos nas últimas 18 semanas, e que contribua para uma página de viagens, ou um blog, ou o que quer que seja que se utilize da API de forma útil. Esta API deve ser aperfeiçoada e estou aberta a sugestões, pois continuarei meu processo de estudos para melhorá-la. 
 <br>
 
 ### O que será possível fazer com a API
@@ -95,7 +114,7 @@ Se você quiser ter essa APi na sua máquina, será necessário:
 $ git clone https://github.com/Carolalves90/Projeto-Livre-FlagFeminino
 
 # Entrar na pasta do repositório
-$ cd Projeto-Livre-FlagFeminino
+$ cd Mochidicas-Reprograma-ProjetoFinal
 
 # Instalar as dependências
 $ npm install
@@ -142,6 +161,18 @@ $ npm start
 | PATCH  | /attdica/:id | Atualiza uma dica|   201  |  ✔️  |
 | DELETE | /deleteDica/:id | Remover uma dica cadastrada         |   200  |  ✔️  |
 <br>
+
+## Autora
+</br>
+
+<p align="center">
+<a>
+ <img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4E03AQF13dnXi_uKqg/profile-displayphoto-shrink_800_800/0/1651802484512?e=1664409600&v=beta&t=h50A_9dPSgDBhHNEqwvrM8P1bDStbV-y3qY0W3RT7G8" width="100px;" alt="Foto de Perfil de Débora"/>
+ <br/>
+</a>
+</p>
+<p align="center"> Desenvolvido por <a href="https://www.linkedin.com/in/déborachristyna" target="_blank"><img src="https://img.shields.io/badge/-Débora_Christyna-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/déborachristyna/" target="_blank"></a> </p>
+
 
 Projeto criado por [Débora Christyna](https://github.com/ChrisAnDias) com a orientação da incrível Professora [Mayhhara F Lilian](https://github.com/mflilian)!<br>
 Há 18 semanas eu sabia zero de programação, hoje tenho aqui o resultado de um belo trabalho colaborativo de mulheres incríveis que me ajudaram a **reprogramar** parte da vida. <br> 
