@@ -180,7 +180,7 @@ Link para a documentação:
  <br/>
 </a>
 </p>
-<p align="center"> Desenvolvido por <a href="https://www.linkedin.com/in/déborachristyna" target="_blank"><img src="https://img.shields.io/badge/-Débora_Christyna-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/déborachristyna/" target="_blank"></a> </p>
+<p align="center"> Desenvolvido por <a href="https://www.linkedin.com/in/déborachristyna/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 
 
 
