@@ -12,12 +12,12 @@
 </br>
 
 <!--ts-->
-- [🌻 {Mochidicas}](#-Casa-Preta-Doulas)
+- [ :world_map: {Mochidicas}](#-Casa-Preta-Doulas)
 - [📁 Arquitetura MRC](#-Arquitetura-MRC)
 - [💻 Tecnologias E Pacotes Usados](#-Tecnologias-E-Pacotes-Usados)
-- [🪄 Instalação](#-Instalação)
+- [ :computer: Instalação](#-Instalação)
 - [🔐 Rotas/Endpoints](#-Rotas-/-Endpoints)
-- [🎄 Autora](#-Autora)
+- [Autora](#-Autora)
 
 
 <!--te-->
@@ -161,6 +161,15 @@ $ npm start
 | PATCH  | /attdica/:id | Atualiza uma dica|   201  |  ✔️  |
 | DELETE | /deleteDica/:id | Remover uma dica cadastrada         |   200  |  ✔️  |
 <br>
+Link para a documentação:
+
+📝 [Swagger](https://mochidicas.herokuapp.com/documents/#/)
+
+📝 [Heroku](https://mochidicas.herokuapp.com)
+
+<br>
+<br>
+
 
 ## Autora
 </br>
@@ -174,8 +183,11 @@ $ npm start
 <p align="center"> Desenvolvido por <a href="https://www.linkedin.com/in/déborachristyna" target="_blank"><img src="https://img.shields.io/badge/-Débora_Christyna-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/déborachristyna/" target="_blank"></a> </p>
 
 
-Projeto criado por [Débora Christyna](https://github.com/ChrisAnDias) com a orientação da incrível Professora [Mayhhara F Lilian](https://github.com/mflilian)!<br>
+
 Há 18 semanas eu sabia zero de programação, hoje tenho aqui o resultado de um belo trabalho colaborativo de mulheres incríveis que me ajudaram a **reprogramar** parte da vida. <br> 
 Obrigada a todas. <br>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/84551213/171416454-ab93ab7f-e5a0-4276-81ec-4f5cb79dff31.png" alt="logo da reprograma" border="0" width = "200" /> <p align="center"></p>
 
 
