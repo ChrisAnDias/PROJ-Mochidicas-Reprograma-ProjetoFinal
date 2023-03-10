@@ -111,7 +111,7 @@ Se você quiser ter essa APi na sua máquina, será necessário:
 
 ```bash
 # Clonar o repositório
-$ git clone https://github.com/Carolalves90/Projeto-Livre-FlagFeminino
+$ git clone https://github.com/ChrisAnDias/Mochidicas-Reprograma-ProjetoFinal.git
 
 # Entrar na pasta do repositório
 $ cd Mochidicas-Reprograma-ProjetoFinal
